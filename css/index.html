@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>һ��ͼƬѭ������β�����Ĺ���Ч��</title>
+	<style>
+	#bg{
+		width:940px;height:300px;
+		background��url(images/��Ʒչʾ.jpg);
+		}
+	#sm{/*����������ʽ*/
+		overflow:hidden;/*����Div�ж�������ݣ�����ͼƬ��һ�����*/
+		width:920px;height:280px;
+		margin:0 auto;
+		padding-top:30px;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<div id="bg">
+		<div id="sm">	<!--����div-->
+				<table>		<!--�����1x2,�ҵ�2��Ԫ���ǿյ�-->
+					<tr>
+						<td id="Pic1">
+							<table>	<!--�ڱ���1x9,���9��ͼƬ-->
+								<tr>
+									<td><img src="img/1.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/2.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/3.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/4.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/5.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/6.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/7.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/8.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+									<td><img src="img/9.jpg" onmouseover="mouseover(this)" onmouseout="mouseout(this)"/></td>
+							    </tr>
+						   </table>
+					   </td>
+					<td id="Pic2"></td>
+				    </tr>
+				</table>
+		</div>
+	</div>
+</center>
+ 
+<!--�������ݵĿͻ��˽ű����ɷ�����ҳ��ͷ��-->
+ 
+<script>
+	Pic2.innerHTML=Pic1.innerHTML;//����һ��ͼƬ����������
+	function scrolltoleft(){//���������ƶ��ķ���
+		sm.scrollLeft++;//�ı���ˮƽ���꣬ʵ�������ƶ�
+		if(sm.scrollLeft>=Pic1.scrollWidth)//��Ҫ��λ
+			sm.scrollLeft=0;//���λ�ø�λ����������ڵĿ������޵�
+	}
+	
+	var MyMar=setInterval(scrolltoleft,40); //��ʱ�����������󲻿ɼ�()
+	
+	function mouseover(x){//�Ŵ�ͼƬ
+		x.style.width="210";
+		x.style.height="256"
+		x.style.cursor="pointer"
+	}
+	function mouseout(x){//ͼƬ��ԭ
+		x.style.width="105";
+		x.style.height="128"
+	}
+ 
+	//�����������÷�����Ӧ������¼�
+	sm.onmouseover=function(){//����������������
+		clearInterval(MyMar);//ֹͣ����
+	}
+	
+	sm.onmouseout=function(){
+		MyMar = setInterval(scrolltoleft,40);//��������
+	}
+	
+ 
+</script>							
+</body>
+</html>
+ 
+
